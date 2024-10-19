@@ -3,29 +3,132 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dynamic Nav | Mello</title>
-    <link rel="stylesheet" href="style.css">
-    <center>
+    <title>UltimateMello</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet"> <!-- Custom Google Font -->
+    <style>
+        body {
+            background: white;
+            font-family: sans-serif;
+            margin: 0;
+            display: flex; /* Enable flexbox layout */
+            flex-direction: column; /* Arrange children in a column */
+            height: 100vh; /* Full viewport height */
+        }
+
+        /* Footer styles */
+        .footer {
+            position: fixed; /* Fix position at the bottom */
+            bottom: 0; /* Align at the bottom */
+            left: 50%; /* Center horizontally */
+            transform: translateX(-50%); /* Adjust for centering */
+            padding: 20px;
+            color: #333;
+            font-size: 20px;
+            background: white; /* Set background color for visibility */
+            width: 100%; /* Full width */
+            text-align: center; /* Center text */
+        }
+
+        .footer .copyright {
+            font-size: 13px;
+            color: #666;
+        }
+
+        .footer a {
+            text-decoration: none;
+            color: #333;
+            transition: color 0.3s ease;
+        }
+
+        .footer a:hover {
+            color: #ff9800;
+        }
+
+        /* Dynamic Island-style navbar */
+        .navbar {
+            position: fixed;
+            top: 30px; 
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px; /* Small initial width */
+            height: 40px; /* Smaller height */
+            background: black;
+            border-radius: 40px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            transition: width 0.5s ease, height 0.3s ease, justify-content 0.5s ease;
+            overflow: hidden; /* Hide overflow */
+        }
+
+        /* Hover effect to expand navbar */
+        .navbar:hover {
+            width: 350px; /* Expands on hover to show all links */
+            height: 50px; /* Increased height on hover */
+            justify-content: flex-start; /* Align items to the left */
+            padding-left: 20px; /* Add padding to create space on the left */
+        }
+
+        .navbar a:hover {
+            color: gold;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: white;
+            font-size: 17px;
+            font-weight: bold;
+            transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+            opacity: 0; /* Hide text initially */
+            margin-left: 20px; /* Space between icons and text */
+            transition: opacity 0.3s ease; /* Smooth transition for opacity */
+        }
+
+        /* Home icon styles */
+        .navbar i {
+            font-size: 24px; /* Icon size */
+            margin-right: 10px; /* Space between icon and text */
+        }
+
+        /* Add gap between icon and text */
+        .navbar a span {
+            margin-left: 5px; /* Adjust this value for more or less space */
+        }
+
+        /* Show text when hovering over the navbar */
+        .navbar:hover a {
+            opacity: 1; /* Show text on hover */
+        }
+    </style>
+    <!-- Updated FontAwesome icon CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div class="header">
-        <h1>Hello</h1>
-        <nav>
-            <div class="nav-container">
-                <ul class="nav-links">
-                    <li><a class='nav-link active' href='/'>Test1</a></li>
-                    <li><a class='nav-link' href=''>Test2</a></li>
-                    <li><a class='nav-link' href=''>Test3</a></li>
-                </ul>
-            </div>
-        </nav>
+
+    <!-- Navbar with home, projects, and contact icons -->
+    <div class="navbar">
+        <a href="/home">
+            <i class="fas fa-home" style="color: #32cd32;"></i>
+            <span>Home</span>
+        </a>
+        <a href="/projects">
+            <i class="fas fa-project-diagram" style="color: #ff8c00;"></i>
+            <span>Projects</span>
+        </a>
+        <a href="/contact">
+            <i class="fas fa-envelope" style="color: #4169e1;"></i>
+            <span>Contact</span>
+        </a>
     </div>
+
     <footer class="footer">
         <div class="copyright">
            <b> &copy; 2024 UltimateMello. All rights reserved. </b>
         </div>
     </footer>
-    </center>
 </body>
 </html>
-\end{code}
